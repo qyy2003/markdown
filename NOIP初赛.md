@@ -103,6 +103,224 @@ D)点击网页上的超链接从本质上就是按照该链接所隐含的统一
 
 ---
 
+143、汉字输入码可分为有重码和无重码两类，下列属于无重码类的是______。
+A)全拼码 B)自然码
+C)区位码 D)简拼码
+
+解析：
+
+答案:**C**
+
+---
+
+***144***、已知汉字"家"的区位码是2850，则其国标码是_______。
+A)4870D   B)3C52H
+C)9CB2H  D)A8D0H
+
+解析：
+
+5442H
+
+答案:**C**???
+
+---
+
+189、关于网络体系结构，以下哪种描述是错误的?   （  ）
+A、物理层完成比特流的传输 
+B、数据链路层用于保证端到端数据的正确传输 
+C、网络层为分组通过通信子网选择适合的传输路径 
+D、应用层处于参考模型的最高层 
+
+解析：数据链路层为分组通过通信子网选择适合的传输路径 
+
+答案:**B**
+
+---
+
+190、在TCP／IP体系结构中，TCP和IP所提供的服务层次分别为   （  ）
+A．应用层和运输层    B．运输层和网络层 
+C.网络层和链路层    D．链路层和物理层
+
+解析：
+
+ **数据链路层**在物理**层**提供的服务的基础上向网络**层**提供服务，其最基本的服务是将源自网络**层**来的**数据**可靠地传输到相邻节点的目标机网络**层**。
+
+答案:**D**
+
+---
+
+192、在一座大楼内组建的一个计算机网络系统，属于（    ）。
+A. WAN     B. LAN      C. MAN     D. PAN
+
+解析：
+
+答案:**B**
+
+---
+
+193、计算机网络通信的一个显著特点是（  ）。
+ A、稳定性      B、间歇性、突发性  C、安全性   D、易用性
+
+解析：
+
+答案:**B**
+
+---
+
+194、网络按通信方式分类，可分为（ ）和（ ）。  
+A. 点对点传输网络 　　　B. 广播式传输网络　
+C. 数据传输网络 　　    D. 对等式网络
+
+解析：
+
+答案:**AB**
+
+---
+
+195、UDP 协议是（）                                         
+A．可靠的无连接协议		B．不可靠的无连接协议
+C．可靠的连接协议		D．不可靠的连接协议
+
+解析：
+
+UDP使用简单的无[连接通信](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Connectionless_communication&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhjLw8rhCBGyqZSufkT27SbmX7zQQA)模型，并且协议机制最少。  UDP提供数据完整性的[校验和](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Checksum&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhjtHok_MypkWNl9hbB-WVx6t9APQQ) ，以及用于在数据报的源和目标处寻址不同功能的[端口号](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Port_numbers&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhgOx8Scwza5HbtyU5idmgD0z0YNPw) 。 它没有[握手](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Handshaking&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhjuSpOegliByOrXoNJCTzh2hdtNIw)对话，因此使用户的程序暴露于底层网络的任何[不可靠性](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Reliability_(computer_networking)&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhjuQjwryE1KXBztpNvKkDrOB5yFgA) ; 不保证交付，订购或重复保护。 如果在网络接口级需要纠错设施，则应用可以使用为此目的而设计的[传输控制协议](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Transmission_Control_Protocol&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhhmLnfR0VxkCYzA7dfDfjvRDwwFKQ) （TCP）或[流控制传输协议](https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&rurl=translate.google.com&sl=auto&sp=nmt4&u=https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol&xid=17259,15700019,15700124,15700149,15700186,15700191,15700201,15700214&usg=ALkJrhh6h0NKvFhQ8dbiiqAaDS-fTBKmWg) （SCTP）。
+
+答案:**B**
+
+---
+
+196、通常所说的TCP/IP是指　(  )                         
+A. TCP 和　IP    B. 传输控制协议　  　Ｃ.　互联网协议
+Ｄ.　IP ARP ICMP IGMP TCP UDP等多种协议的集合
+
+解析：
+
+**网际网路协议**（英语：Internet Protocol Suite，缩写IPS）[[1\]](https://zh.wikipedia.org/w/index.php?title=TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F&variant=zh-hans&gettingStartedReturn=true#cite_note-1)是一个网路通讯模型，以及一整个[网络传输协议](https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)家族，为[网际网路](https://zh.wikipedia.org/wiki/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF)的基础通讯架构。它常被通称为**TCP/IP协议族**（英语：TCP/IP Protocol Suite，或TCP/IP Protocols），简称**TCP/IP**[[2\]](https://zh.wikipedia.org/w/index.php?title=TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F&variant=zh-hans&gettingStartedReturn=true#cite_note-2)。因为该协定家族的两个核心协定：TCP（[传输控制协议](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE)）和IP（[网际协议](https://zh.wikipedia.org/wiki/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE)），为该家族中最早通过的标准[[3\]](https://zh.wikipedia.org/w/index.php?title=TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F&variant=zh-hans&gettingStartedReturn=true#cite_note-3)。由于在网络通讯协议普遍采用分层的结构，当多个层次的协议共同工作时，类似计算机科学中的[堆栈](https://zh.wikipedia.org/wiki/%E5%A0%86%E6%A0%88)，因此又被称为**TCP/IP协议栈**（英语：TCP/IP Protocol Stack）[[4\]](https://zh.wikipedia.org/w/index.php?title=TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F&variant=zh-hans&gettingStartedReturn=true#cite_note-4)[[5\]](https://zh.wikipedia.org/w/index.php?title=TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F&variant=zh-hans&gettingStartedReturn=true#cite_note-5)  。这些协议最早发源于[美国国防部](https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD%E5%9B%BD%E9%98%B2%E9%83%A8)（缩写为DoD）的[ARPA网](https://zh.wikipedia.org/wiki/ARPA%E7%BD%91)项目，因此也被称作**DoD模型**（DoD Model）[[6\]](https://zh.wikipedia.org/w/index.php?title=TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F&variant=zh-hans&gettingStartedReturn=true#cite_note-6)。这个协定套组由[互联网工程任务组](https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E5%B7%A5%E7%A8%8B%E4%BB%BB%E5%8A%A1%E7%BB%84)负责维护。
+
+答案:**D**
+
+---
+
+197、缩写CERNET表示中国( )计算机网。                
+A.教育科研    B.经济    C.农业    D.工业
+
+解析：
+
+中国教育和科研计算机网（简称中国教育网或教育网，英语：China Education and Research Network，缩写：**CERNET**）始建于1994年，是全球最大的学术互联网，也是中国最大的学术计算机互联网络，还是中国四大骨干网之一。 中国教育网由中国教育部投资并管理，清华大学等高校承担建设和运行。
+
+答案:**A**
+
+---
+
+198、浏览WWW使用的地址称为URL，URL是指        。        
+A.IP地址    B.主页   C.主机域名    D.统一资源定位符
+
+解析：
+
+**统一资源定位符**（或称**统一资源定位器**/**定位地址**、**URL地址**等[[1\]](https://zh.wikipedia.org/zh-hans/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6#cite_note-1)，英语：Uniform Resource Locator，常缩写为**URL**），有时也被俗称为**网页地址**（**网址**）。如同在网路上的门牌，是[因特网](https://zh.wikipedia.org/wiki/%E5%9B%A0%E7%89%B9%E7%BD%91)上标准的资源的地址（Address）。它最初是由[蒂姆·伯纳斯-李](https://zh.wikipedia.org/wiki/%E8%92%82%E5%A7%86%C2%B7%E4%BC%AF%E7%BA%B3%E6%96%AF-%E6%9D%8E)发明用来作为[万维网](https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91)的地址。现在它已经被[万维网联盟](https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91%E8%81%94%E7%9B%9F)编制为因特网标准 [RFC 1738](https://tools.ietf.org/html/rfc1738)。 
+
+在网际网路的历史上，统一资源定位符的发明是一个非常基础的步骤。统一资源定位符的语法是一般的，可扩展的，它使用[ASCII](https://zh.wikipedia.org/wiki/ASCII)代码的一部分来表示因特网的地址。统一资源定位符的开始，一般会标志着一个计算机网络所使用的网络协议。 
+
+统一资源定位符的标准格式如下：  
+
+> **协议类型:**[**//服务器地址**[**:端口号**]][**/资源层级UNIX文件路径**]文件名[?**查询**][#**片段ID**]
+
+统一资源定位符的完整格式如下：  
+
+> **协议类型:**[**//**[**访问资源需要的凭证信息@**]**服务器地址**[**:端口号**]][**/资源层级UNIX文件路径**]文件名[?**查询**][#**片段ID**]
+
+其中【访问凭证信息@  :端口号  ?查询  #片段ID】都属于选填项。 
+
+
+
+答案:**D**
+
+---
+
+199、域名http://www.njupt.edu.cn/由4个子域组成,其中哪个表示主机名 .( )  
+A,www B,njupt C,edu D,cn
+
+解析：?!!!
+
+答案:**A**
+
+---
+
+200、一条TCP连接的建立过程包括(     )个步骤，释放过程包括(  )个步骤。
+A.   2           B.   3        C.   4         D.   5
+
+解析：
+
+TCP协议的运行可划分为三个阶段：连接创建(*connection establishment*)、数据传送（*data transfer*）和连接终止（*connection termination*）。操作系统将TCP连接抽象为[套接字](https://zh.wikipedia.org/wiki/Berkeley%E5%A5%97%E6%8E%A5%E5%AD%97)表示的本地端点（local end-point），作为编程接口给程序使用。在TCP连接的生命期内，本地端点要经历一系列的[状态](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE#状态编码)改变。[[1\]](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE#cite_note-1)
+
+答案:**BC**
+
+---
+
+125、根据汉字国标GB2312－80的规定，一个汉字的机内码的码长是________。
+A)8bit   B)12bit
+C)16bit  D)24bit
+
+解析：
+
+答案:**C**
+
+---
+
+126、下列各位十进制数中，属于正确的汉字区位码的是___。
+A)5601      B)9596   
+C)9678      D)8799
+
+解析：
+
+答案:**A**
+
+---
+
+131、下列关于汉字编码的叙述中，==错误==的是______。
+A)***BIG5码是通行于香港和台湾地区的繁体汉字编码***
+B)一个汉字的区位码就是它的国标码
+C)无论两个汉字的笔画数目相差多大，但它们的机内码的长度是相同的
+D)同一汉字用不同的输入法输入时，其输入码不同但机内码却是相同的
+
+解析：
+
+答案:**B**
+
+---
+
+***132***、汉字的区位码由一个汉字的区号和位号组成。其区号和位号的范围各为_______。
+A)区号1～95，位号1～95
+B)区号1～94，位号1～94
+C)区号0～94，位号0～94
+D)区号0～95，位号0～95
+
+解析：
+
+答案:**B**
+
+---
+
+***134***、根据汉字国标码GB2312－80的规定，一级常用汉字数是________个。
+A)3477  B)3575
+C)3755  D)7445
+
+解析：
+
+答案:**C**
+
+---
+
+138、设已知一汉字的国标码是5E48H，则其内码应该是______。
+A)DE48H  B)DEC8H
+C)5EC8H  D)7E68H
+
+解析：+8080H
+
+答案:**B**
+
+---
+
 2、关于计算机内存下面的说法哪些是正确的：
 A)随机存储器（RAM）的意思是当程序运行时，每次具体分配给程序的内存位置是随机而不确定的。
 B)一般的个人计算机在同一时刻只能存/取一个特定的内存单元。
@@ -2371,7 +2589,7 @@ https://baike.baidu.com/item/%E5%A3%B0%E9%9F%B3%E5%90%88%E6%88%90%E4%B8%8E%E9%87
 ### 汉字编码(XY)
 
 区位码-->国标码-->机内码
-​      +32      +128
+​      +32             +128
 ​    前32危险  png首位+1（防和ASCII冲突）
 ​    
 
