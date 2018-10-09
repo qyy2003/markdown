@@ -1531,6 +1531,42 @@ D、结构化程序设计方法
 ---
 
 ```c++
+#include<iostream>
+#include<iomanip> 
+using namespace std;
+int m[101][101];
+int main(){
+	int a;cin>>a;
+	int c=a*a,i=1,k=(a+1)/2;
+	for(int j=1;j<=c;j++){
+		m[i][k]=j;
+		if(j%a==0)
+			if(i==a)i=1;else i++;
+		else{
+			if(i==1)i=a;else i--;
+			if(k==a)k=1;else k++;
+		}
+	}
+		for(int j=1;j<=a;j++) cout<<m[4][j]<<" ";
+	return 0;
+}
+//输出入：7 
+//输出：
+```
+
+好一道水题，但我做错了
+
+==30== 39 48 1 10 19 28
+38 47 7 9 18 27 ==29==
+46 6 8 17 26 35 37
+5 14 16 25 34 36 45
+13 15 24 33 42 44 4
+21 23 32 41 43 3 12
+22 31 40 49 2 11 20
+
+---
+
+```c++
 #include <iostream>
 using namespace std;
 
@@ -1635,7 +1671,7 @@ ans=131072%2009=487
 
 然而忘了老师的讲义：
 
-1<<17=65536
+1<<17=131072
 
 ![](http://zjqyy.top/pic/53.png)
 
@@ -3733,6 +3769,18 @@ C、(¬A→B)∧(CVD)          D、A∧(DV¬C)∧B
 
 ---
 
+# 未AC的xjoi
+
+[NOIP2012提高组初赛C++](http://210.33.19.103/precontest/239?rand=W7wk3KwRAAMAAB16iDwAAAAA20181009034740)
+
+[NOIP2018提高组初赛C++模拟试题1](http://210.33.19.103/precontest/242?rand=W7wdnqwRAAMAABxySZkAAAAA20181009031646)
+
+[选择题-查找排序专项训练](http://210.33.19.103/precontest/255?rand=W7wJ7KwRAAMAABvFLZUAAAAH20181009015244)
+
+---
+
 ---
 
 # 未完待续
+
+[http://210.33.19.103/precontest/239?rand=W7wk3KwRAAMAAB16iDwAAAAA20181009034740]:()
