@@ -319,6 +319,18 @@ C)5EC8H  D)7E68H
 
 答案:**B**
 
+------
+
+19、若A=True，B=False，C=True，D=False，则下列逻辑运算真的有（ABC）
+
+A、(A∧B)V(C∧DV ¬D)       B、((¬A∧B)VC)∧¬B   
+
+C、(¬A→B)∧(CVD)          D、A∧(DV¬C)∧B
+
+解析：A→B表示A导致B，所以只有A0B1时值才为假
+
+答案:**ABC**
+
 ---
 
 2、关于计算机内存下面的说法哪些是正确的：
@@ -1079,6 +1091,63 @@ D)在尾部删除一个结点的语句序列为。
 
 ---
 
+2、	给定一个01字符串，请你找出长度介于a，b之间，重复出现次数最多的01串。
+输入：a，b(0<=A<=B<=12)
+由0、1组合的序列，由“.”结尾。
+输出：重复出现的最多次数以及所有满足要求的串。
+提示：本程序中将01序列转换为2进制存储。
+
+```c++
+#include<iostream> 
+using namespace std;  
+int m[8193],two[21],v[21];
+int main() {
+	for(int i=1;i<=13;i++) two[i]= (1) ;
+	int a,b;
+	cin>>a>>b>>c;
+	int s=1,k=1;
+	while(c!='.'){
+		s=(s<<1)+c-'0';
+		if( (2) )s=(s-two[b+1])%two[b]+two[b];
+		m[s]++;
+		if(k<b)
+			for(int i=a;i<k;i++)  (3) ;
+		k++;
+		cin>>c;
+	}
+	for(int i=two[b];i<=two[b+1];i++)
+		if(m[i]>0)
+			for(int j=a;j<b;j++) m[i%two[j]+two[j]]= (4) ;
+	int Max=0;
+	for(int i=two[a];i<=two[b+1];i++)
+		if(m[i]>Max) Max=m[i];
+	cout<<Max<<endl;
+	for(int i=two[a];i<=two[b+1];i++)
+		if(m[i]==Max){
+			int j=0,k=i;
+			do{
+				j++;v[j]=k%2;k/=2;
+			}while( (5) );
+			while(j>0){cout<<v[j];j--;}
+			cout<<endl;
+		}
+    return 0;
+}
+```
+
+解析：
+
+当它大于或等于 b位时，它就存了这个数，而没有考虑其后缀序列，故后来它对此做了处理，即（4）
+
+答案
+(1) 1<
+(2) s>=two[b+1]
+(3) m[s%two[i]+two[i]]++
+(4) m[i%two[j]+two[j]]+m[i]
+(5) k!=1 
+
+---
+
 8、散列表的地址区间为0-10,散列函数为H(K)=K mod 11。采用开地址法的线性探查法处理冲突，并将关键字序列26，25，72，38，8，18，59存储到散列表中，这些元素存入散列表的顺序并不确定。假定之前散列表为空，则元素59存放在散列表中的可能地址有：
 A) 5      B) 7     C) 9      D) 10
 
@@ -1527,6 +1596,102 @@ D、结构化程序设计方法
 解析：59+病倒团员+指挥
 
 答案:**C**
+
+------
+
+计算机中，使用的基本存储单位是（ ）
+A、 字   B、 位  C、 字节   D、 字符
+
+解析：
+
+答案：**C**
+
+------
+
+20、以下人物与其贡献对应的是（BCD）。
+
+​	A．阿兰·图灵-制造人类历史上第一台计算机	ENIAC	
+
+ B. 冯·诺依曼-“存储程序”概念和二进制原理
+
+​	C．姚期智-建立量子计算机理论基础		
+
+ D. 王选-汉字激光照排系统
+
+---
+
+4.
+
+```c++
+#include<iostream>    
+using namespace std;   
+int w[10];
+int n,m,weight;
+int main() {
+	cin>>weight;cout<<weight<<'=';
+	m=1;int i=0;w[i]=1;
+	while(m<weight){
+		i++;w[i]=w[i-1]*3;m+=w[i];
+	}
+	bool flg=false;
+	n=weight;i=0;
+	while(n>0){
+	      switch(n%3){
+		case 0:n/=3;break;
+		case 1:
+			n/=3;if(flg) cout<<'+';
+			cout<<w[i];flg=true;break;
+		case 2:
+			n=n/3+1;cout<<'-'<<w[i];
+			flg=true;break;
+	      }
+	i++;
+	}
+return 0;
+}
+```
+
+输入：518  
+输出：
+
+518 %3=2	-1
+
+173 %3=2	-3
+
+58    %3=1	+9
+
+19    %3=1	+27
+
+6	%3=0
+
+2	%3=2	-243
+
+1	%3=1	+729
+
+答案：	518=-1-3+9+27-243+729 
+
+---
+
+1. 将2006个人分成若干不相交的子集，每个子集至少有三个人，并且：
+2. 在每个子集中，没有人认识该子集的所有人。
+3. 
+4. 同一子集的==任何==3个人中，至少有2个人互不认识。
+5. 
+6. 对同一子集中任何2个不相识的人，在该子集中恰好只有1个人认识这两个人。
+
+ 则满足条件的子集最多能有   401    个。
+
+解析：用一个结点表示一个人，两个人互相认识就用线连上，不认识就不连。
+
+因此，对于题目描述，可以发现三个节点、四个节点、六、七结点是不行的，五边形、八边形可以（正八边形，每点再向正对的点连线）
+
+此题是NOIP2006年真题，但是有争议
+
+标准解答：但是此题要求最多，2006/5=401
+
+不同理解：标准解答中最后一个集合为6，不符合要求，因此应该列5*x+8*y=2006
+
+解得x+y最大为400（398+2）
 
 ---
 
@@ -2121,6 +2286,58 @@ int main(){
 考虑左上角×4+中间的十字
 
 答案:**206**
+
+---
+
+3、	
+
+```c++
+#include<iostream> 
+#include<iomanip>   
+using namespace std;  
+int a[33],b[33];
+void ssort(int x,int y){
+	if(y-x>1){
+		int m=(x+y)/2;
+		ssort(x,m);
+		ssort(m+1,y);
+		int k=x;
+		for(int i=x;i<=m;i++){
+			b[k]=a[i];b[k+1]=a[m+i-x+1];
+			k+=2;
+		}
+		for(int i=x;i<=y;i++) a[i]=b[i];
+	}
+}
+int main() {
+	for(int i=1;i<=16;i++) a[i]=i;
+	ssort(1,16);
+	for(int i=1;i<=16;i++) cout<<setw(3)<<a[i];
+	cout<<endl;
+    return 0;
+}
+```
+
+//这道题请严格按照输出格式来，注意行首和行间空格，行末空格忽略
+输出：
+
+1	2	3	4	5	6	7	8	|	9	10	11	12	13	14	15	16
+
+1	2	3	4	|	5	6	7	8	|	9	10	11	12	|	13	14	15	16
+
+1	2	|	3	4	|	5	6	|	7	8	|	9	10	|	11	12	|	13	14	|	15	16
+
+1	2	|	3	4	|	5	6	|	7	8	|	9	10	|	11	12	|	13	14	|	15	16
+
+1	3	2	4	|	5	7	6	8	|	9	11	10	12	|	13	15	14	16
+
+1	5	3	7	2	6	4	8	|	9	13	11	15	10	14	12	16
+
+1	9	5	13	3	11	7	15	2	10	6	14	4	12	8	16
+
+然后一个三位
+
+答案： 1 9 5 13 3 11 7 15 2 10 6 14 4 12 8 16 
 
 ---
 
@@ -3576,130 +3793,9 @@ b.将v加入集合Vnew中，将<u, v>边加入集合Enew中；
 
 ---
 
-2、	给定一个01字符串，请你找出长度介于a，b之间，重复出现次数最多的01串。
-输入：a，b(0<=A<=B<=12)
-由0、1组合的序列，由“.”结尾。
-输出：重复出现的最多次数以及所有满足要求的串。
-提示：本程序中将01序列转换为2进制存储。
+2.对于一棵二叉树，独立集是指两两互不相邻的节点构成的集合。例如，图1有5个不同的独立集（1个双点集合、3个单点集合、1个空集），图2有14个不同的独立集。那么，图3有_________个不同的独立集。
 
-```c++
-#include<iostream> 
-using namespace std;  
-int m[8193],two[21],v[21];
-int main() {
-	for(int i=1;i<=13;i++) two[i]= (1) ;
-	int a,b;
-	cin>>a>>b>>c;
-	int s=1,k=1;
-	while(c!='.'){
-		s=(s<<1)+c-'0';
-		if( (2) )s=(s-two[b+1])%two[b]+two[b];
-		m[s]++;
-		if(k<b)
-			for(int i=a;i<k;i++)  (3) ;
-		k++;
-		cin>>c;
-	}
-	for(int i=two[b];i<=two[b+1];i++)
-		if(m[i]>0)
-			for(int j=a;j<b;j++) m[i%two[j]+two[j]]= (4) ;
-	int Max=0;
-	for(int i=two[a];i<=two[b+1];i++)
-		if(m[i]>Max) Max=m[i];
-	cout<<Max<<endl;
-	for(int i=two[a];i<=two[b+1];i++)
-		if(m[i]==Max){
-			int j=0,k=i;
-			do{
-				j++;v[j]=k%2;k/=2;
-			}while( (5) );
-			while(j>0){cout<<v[j];j--;}
-			cout<<endl;
-		}
-    return 0;
-}
-```
-
-答案
-(1) 1<
-(2) s>=two[b+1]
-(3) m[s%two[i]+two[i]]++
-(4) m[i%two[j]+two[j]]+m[i]
-(5) k!=1 
-
----
-
-3、	
-
-```c++
-#include<iostream> 
-#include<iomanip>   
-using namespace std;  
-int a[33],b[33];
-void ssort(int x,int y){
-	if(y-x>1){
-		int m=(x+y)/2;
-		ssort(x,m);
-		ssort(m+1,y);
-		int k=x;
-		for(int i=x;i<=m;i++){
-			b[k]=a[i];b[k+1]=a[m+i-x+1];
-			k+=2;
-		}
-		for(int i=x;i<=y;i++) a[i]=b[i];
-	}
-}
-int main() {
-	for(int i=1;i<=16;i++) a[i]=i;
-	ssort(1,16);
-	for(int i=1;i<=16;i++) cout<<setw(3)<<a[i];
-	cout<<endl;
-    return 0;
-}
-```
-
-//这道题请严格按照输出格式来，注意行首和行间空格，行末空格忽略
-输出：
-
-答案： 1 9 5 13 3 11 7 15 2 10 6 14 4 12 8 16 
-
----
-
-4.
-
-```c++
-#include<iostream>    
-using namespace std;   
-int w[10];
-int n,m,weight;
-int main() {
-	cin>>weight;cout<<weight<<'=';
-	m=1;int i=0;w[i]=1;
-	while(m<weight){
-		i++;w[i]=w[i-1]*3;m+=w[i];
-	}
-	bool flg=false;
-	n=weight;i=0;
-	while(n>0){
-	      switch(n%3){
-		case 0:n/=3;break;
-		case 1:
-			n/=3;if(flg) cout<<'+';
-			cout<<w[i];flg=true;break;
-		case 2:
-			n=n/3+1;cout<<'-'<<w[i];
-			flg=true;break;
-	      }
-	i++;
-	}
-return 0;
-}
-```
-
-输入：518  
-输出：
-
-答案：	518=-1-3+9+27-243+729 
+![](http://zjqyy.top/pic/453.jpg)
 
 ---
 
@@ -3719,62 +3815,7 @@ D．过点（2，0，0）、（5，2，1）的直线
 
 ---
 
-计算机中，使用的基本存储单位是（ ）
-A、 字   B、 位  C、 字节   D、 字符
 
-解析：
-
-答案：**C**
-
----
-
-19、若A=True，B=False，C=True，D=False，则下列逻辑运算真的有（ABC）
-
-A、(A∧B)V(C∧DV ¬D)       B、((¬A∧B)VC)∧¬B   
-
-C、(¬A→B)∧(CVD)          D、A∧(DV¬C)∧B
-
-解析：A→B表示A导致B，所以只有A0B1时值才为假
-
-答案:**ABC**
-
-------
-
-20、以下人物与其贡献对应的是（BCD）。
-
-​	A．阿兰·图灵-制造人类历史上第一台计算机	ENIAC	
-
- B. 冯·诺依曼-“存储程序”概念和二进制原理
-
-​	C．姚期智-建立量子计算机理论基础		
-
- D. 王选-汉字激光照排系统
-
----
-
-1. 将2006个人分成若干不相交的子集，每个子集至少有三个人，并且：
-
-1. 在每个子集中，没有人认识该子集的所有人。
-
-2. 
-3. 同一子集的==任何==3个人中，至少有2个人互不认识。
-
-4. 
-5. 对同一子集中任何2个不相识的人，在该子集中恰好只有1个人认识这两个人。
-
- 则满足条件的子集最多能有   401    个。
-
-解析：用一个结点表示一个人，两个人互相认识就用线连上，不认识就不连。
-
-因此，对于题目描述，可以发现三个节点、四个节点、六、七结点是不行的，五边形、八边形可以（正八边形，每点再向正对的点连线）
-
-此题是NOIP2006年真题，但是有争议
-
-标准解答：但是此题要求最多，2006/5=401
-
-不同理解：标准解答中最后一个集合为6，不符合要求，因此应该列5*x+8*y=2006
-
-解得x+y最大为400（398+2）
 
 ---
 
@@ -3782,7 +3823,7 @@ C、(¬A→B)∧(CVD)          D、A∧(DV¬C)∧B
 
 [NOIP2012提高组初赛C++](http://210.33.19.103/precontest/239?rand=W7wk3KwRAAMAAB16iDwAAAAA20181009034740)
 
-[NOIP2018提高组初赛C++模拟试题1](http://210.33.19.103/precontest/242?rand=W7wdnqwRAAMAABxySZkAAAAA20181009031646)
+~~[NOIP2018提高组初赛C++模拟试题1](http://210.33.19.103/precontest/242?rand=W7wdnqwRAAMAABxySZkAAAAA20181009031646)~~
 
 [选择题-查找排序专项训练](http://210.33.19.103/precontest/255?rand=W7wJ7KwRAAMAABvFLZUAAAAH20181009015244)
 
