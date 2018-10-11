@@ -2324,6 +2324,103 @@ int main(){
 
 ## 暴力模拟
 
+---
+
+2、问题：给你一棵树最多100000个节点，一个有效的k集合是指一个这棵树的路径的集合，其中所有的路径上点数为k并且树上的每个点最多属于一条路径，对于所有小于等于n的自然数k求出有效的k集合的最大大小。
+输出n行 第i行表示 有效的i集合的大小。
+思路是利用 O(n)的DP可以计算 一个k的答案，然后考虑到随着k增大答案递减。
+并且k的答案显然不超过n/k下取整 所以对于大于根号n的k答案最多只有根号n个取值，我们暴力二分确定每一个取值的区间。
+对于前根号n个数暴力计算。
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 111111;
+const int M = N * 2;
+int n, m, fir[N], ne[M], to[M], cnt, x, y, fa[N], who[N], tot;
+//who 表示这棵树的先序遍历
+bool vis[N]; 
+void add(int x, int y) { //连接单向边利用边表存储。
+   (6) ;
+  fir[x] = cnt;
+  to[cnt] = y;
+}
+void link(int x, int y) {//连接双向边。
+  add(x, y);
+  add(y, x);
+}
+#define Foreachson(i, x) for(int i = fir[x]; i; i = ne[i])
+//遍历边集
+int dp[N]
+int K, ans;
+void dfs(int x, int f) {
+  fa[x] = f;
+   (7) ;
+  Foreachson(i, x) {
+int V = to[i];
+if(V == f) continue;
+dfs(V, x);
+  }
+}
+int res[N];
+int solve(int k) {
+//O(n)计算 k有效集合的答案。
+  if(vis[k]) return res[k];
+  //记忆化
+  if(k == 1) return n;
+  ans = 0;
+  for(int i = 1; i <= n; ++ i) dp[i] = 0;
+  //初始化。 dp[i] 表示 第i个点如果没有被选，假设它和它的父亲断开，连接它的未被选择的链中最长的链长。 dp[i] = -1 表示已选择。
+  for(int i = 1; i < n; ++ i) {
+ (8) ;
+++ dp[V]; // 加入自己。
+if(dp[fa[V]] == -1) continue;
+if( (9) ) {
+dp[fa[V]] = -1;
+++ ans;
+}
+else dp[fa[V]] = max(dp[fa[V]], dp[V]);
+  }
+  return res[k] = ans;
+}
+int main() {
+  scanf("%d", &n);
+  for(int i = 1; i < n; ++ i) {scanf("%d%d", &x, &y)， link(x, y);}
+  dfs(1, 0);
+  reverse(who + 1, who + n + 1);
+  if(n <= 1500) {
+for(int i = 1; i <= min(1500, n); ++ i) printf("%d\n", solve(i));
+return 0;
+  }
+  for(int i = 1; i <= 1500; ++ i) printf("%d\n", res[i] = solve(i));
+  int last;
+  for(int i = 1501; i <= n; i = last + 1) {
+//二分下一个最大集合数量不一样的位置在哪里。
+ int l = i, r = n
+last = i - 1;
+int now = solve(i);
+if(!now) {
+for(int j = i; j <= n; ++ j) printf("%d\n", now);
+return 0;
+}
+while(l <= r) {
+int mid = (l + r) >> 1;
+if(solve(mid) != now) r = mid - 1;
+	  else  (10) ;
+}
+for(int j = i; j <= last; ++ j) printf("%d\n", now);
+  }
+}
+
+```
+
+ reverse(who + 1, who + n + 1); surprise
+
+8.int V=who[i]
+
+9.dp[V]+dp[fa[V]]==+1==>=k							
+
+---
+
 2、给定如图所示的正方形（n=3）。我们可以在这个正方形的某个格子上放置大炮。但是，如果大炮在同一行或者同一列，他们就会互相攻击到。大炮数量为2，请你求出可能的放置方案总数，使得大炮互相不会攻击到。现在告诉你n=3时，总数为46，则n=4时，总数为_______。
 ![](http://zjqyy.top/pic/5.JPG)
 如图所示：上面为n=3的正方形，下面三幅图，前两幅可以互相攻击到，第三幅无法互相攻击到。
@@ -3291,6 +3388,60 @@ CERNET(China Education and Research Network)分四级管理，分别是全国网
 ------
 
 ------
+
+## E
+
+![](https://wikimedia.org/api/rest_v1/media/math/render/svg/5bedbf847fc8605a6a660ec518c0f065de0bbc38)
+
+
+就像圆周率 $ {\displaystyle \pi }$和虚数单位i ，$ {\displaystyle e} $是数学中最重要的常数之一。 它有几种等价定义，下面列出一部分。
+
+最常见的四种e的定义如下：
+
+定义 ${\displaystyle e}$ 为下列极限值： 
+
+${\displaystyle e=\lim _{n\to \infty }\left(1+{\frac {1}{n}}\right)^{n}}$ 。 
+
+定义 ${\displaystyle e} $为下列无穷级数之和： 
+
+$ {\displaystyle e=\sum _{n=0}^{\infty }{1 \over n!}={1 \over 0!}+{1 \over 1!}+{1 \over 2!}+ {1 \over 3!}+{1 \over 4!}+\cdots } $， 
+​    
+其中$ {\displaystyle n!}$代表 $ {\displaystyle n} $的阶乘 。 
+
+定义${\displaystyle e}$为唯一的正数 ${\displaystyle x}$ 使得 
+
+$ {\displaystyle \int _{1}^{x}{\frac {1}{t}}\,dt={1}}$。 
+
+定义 $ {\displaystyle e} $为唯一的实数 $ {\displaystyle x} $使得
+
+$ {\displaystyle \lim _{h\to 0}{\frac {x^{h}-1}{h}}=1} $
+
+这些定义可证明是等价的，请参见文章指数函数的特征描述 。 
+
+```c++
+#include<iostream>
+using namespace std;
+int main(void)
+{
+	long N,a,b,i,j=0,k=0;
+	cout<<"请输入e位数(不超过100000)\n",cin>>N,N+=5;
+	long *e=new long[N],*c=new long[N];
+	while(++j<N)e[j]=c[j]=0;
+	for(*c=i=1;k<N;i++)
+	{
+		while(!c[k])k++;
+		for(b=0,j=k-1;++j<N;b=a%i)e[j]+=(c[j]=(a=b*10+c[j])/i);
+	}
+	for(;--j;e[j]%=10)e[j-1]+=e[j]/10;
+	for(cout<<"2.";++j<N-5;)cout<<e[j];
+	delete[]e,delete[]c;
+	return 0;
+}
+```
+
+---
+
+---
 
 ### 组合数学
 
