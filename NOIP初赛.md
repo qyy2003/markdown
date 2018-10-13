@@ -1138,6 +1138,225 @@ D)在尾部删除一个结点的语句序列为。
 
 ---
 
+```c++
+2.
+给你一张n个点m条边的无向图，接着给你q个询问，每个询问给你一对点a，b(a!=b)，希望你从a走到b并最小化经过的边的边权的最大值，将最大值输出。
+1 <= n, m, q <= 200000。
+（提示：可以证明一定存在一种最优方案只经过最小生成树上的边。）
+
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+const int N=400005;
+int n,m,q,cnt;
+int dis[N];
+int father[N],fw[N];
+int deep[N],p[N][25];
+struct edge
+{
+	int u,v,w;
+}e[N];
+inline int find(int x)
+{
+	return dis[x]==x?x:(dis[x]=find(dis[x]));
+}
+inline void merge(int x,int y,int w)
+{
+	x=find(x);
+	y=find(y);
+	int z=____(1)____;
+	father[z]=fw[z]=0;
+	father[x]=father[y]=dis[x]=dis[y]=dis[z]=____(2)____;
+	fw[x]=fw[y]=w;
+	return;
+}
+inline bool cmp(edge a,edge b)
+{
+	return a.w<b.w;
+}
+inline void init()
+{
+	int i,j,go;
+	for(i=1;i<=n;i++)
+		dis[i]=i;
+	cnt=n;
+	sort(e+1,e+m+1,cmp);
+	for(i=1;i<=m;i++)
+		if(find(e[i].u)!=find(e[i].v))
+		  ____(3)____;
+	for(i=cnt;i>=1;i--)
+	{
+		p[i][0]=father[i];
+		deep[i]=deep[father[i]]+1;
+		for (j=1;j<=20;j++)
+			p[i][j]=p[p[i][j-1]][j-1];
+	}
+	return;
+}
+inline int query(int x,int y)
+{
+	int i;
+	if(deep[x]<deep[y])
+	  swap(x,y);
+	for(i=20;i>=0;i--)
+		if(____(4)____)
+		  x=p[x][i];
+	if(father[x]==y)
+	  return fw[x];
+	if(deep[father[x]]>=deep[y])
+	  ____(5)____;
+	for(i=20;i>=0;i--)
+		if(p[x][i]!=p[y][i])
+		{
+			x=p[x][i];
+			y=p[y][i];
+		}
+	return fw[x];
+}
+int main()
+{
+	int u,v;
+	int i;
+	cin>>n>>m;
+	for(i=1;i<=m;i++)
+		cin>>e[i].u>>e[i].v>>e[i].w;
+	init();
+	cin>>q;
+	while(q--)
+	{
+		cin>>u>>v;
+		cout<<query(u,v)<<endl;
+	}
+	return 0;
+}
+```
+
+一棵树，好一颗树
+
+```c++
+++cnt
+z
+merge(e[i].u,e[i].v,e[i].w)
+deep[p[x][i]]>deep[y]
+x=father[x]
+```
+
+---
+
+```c++
+小L有一个N个数的整数序列，这个序列的中的数两两不同。小L每次可以交换序列中的任意两个数，代价为这两个数之和。小L希望将整个序列升序排序，问小L需要的最小代价是多少？
+1 <= N <= 100000，输入数据中的其他整数均为正整数且不超过10^9。
+
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+
+#define INF 1E9
+#define LL long long
+
+using namespace std;
+
+const int N = 100005;
+
+int a[N], c[N];
+bool v[N];
+
+struct Node {
+    int x, idx;
+    bool operator < (const Node &a) const {
+        return x < a.x;
+    }
+} b[N], t[N];
+
+void sort(int l, int r) {
+    if (l == r) return;
+    int m = (l + r) >> 1;
+    sort(l, m);
+    sort(m + 1, r);
+    int i = l, j = m + 1, k = l;
+    while (i <= m && j <= r) {
+        if (b[i] < b[j]) t[k++] = b[i++];
+        else t[k++] = b[j++];
+    }
+    for (; i <= m; i++)
+        t[k++] = b[i];
+    for (; j <= r; j++)
+        t[k++] = b[j];
+    for (k = l; k <= r; k++)
+        b[k] = t[k];
+    return;
+}
+
+int main() {
+    int n, i, MIN = INF;
+    cin >> n;
+    for (i = 1; i <= n; i++) {
+        cin >> a[i];
+        b[i].x = a[i];
+        ____(1)____;
+        if (MIN > a[i]) MIN = a[i];
+    }
+    ____(2)____;
+    for (i = 1; i <= n; i++)
+        c[b[i].idx] = i;
+    memset(v, 0, sizeof(v));
+    LL ans = 0;
+    for (i = 1; i <= n; i++) {
+        if (____(3)____) continue;
+        int Min = a[i];
+        LL sum = a[i], t = 1;
+        v[i] = 1;
+        int j = c[i];
+        while (!v[j]) {
+            t++;
+            v[j] = 1;
+            if (Min > a[j]) Min = a[j];
+            sum += a[j];
+            ____(4)____;
+        }
+        ans += sum + min((t - 2) * Min, ____(5)____);
+    }
+    cout << ans << endl;
+    return 0;
+}
+```
+
+神仙最后一空
+```c++
+b[i].idx=i
+sort(1,n)
+v[i]
+j=c[j]
+(t+1)*MIN+Min 
+```
+
+---
+
+```c++
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+	int n, i;
+	cin >> n;
+	int cnt = 0;
+	for (i = 1; i < n; i++)
+		if (__gcd(n, i) == 1) ++cnt;
+	cout << cnt << endl;
+	return 0;
+}
+
+输入：2147483647
+输出：2147483646
+```
+
+2147483647是29个1
+
+---
+
 2、	给定一个01字符串，请你找出长度介于a，b之间，重复出现次数最多的01串。
 输入：a，b(0<=A<=B<=12)
 由0、1组合的序列，由“.”结尾。
@@ -1643,6 +1862,15 @@ D、结构化程序设计方法
 解析：59+病倒团员+指挥
 
 答案:**C**
+
+---
+
+2.由3个a，5个b和2个c构成的所有字符串中，包含子串“abc”的共有（）个。
+A. 40320   B. 39600   C. 840   D. 780 
+
+解析：还有a,b,c内部的排列要除
+
+答案:**D**
 
 ------
 
@@ -3799,35 +4027,43 @@ b.将v加入集合Vnew中，将<u, v>边加入集合Enew中；
 
 ---
 
-15、四面体的顶点和各棱中点共10个点，从中取4个不共面的点，不同的取法有多少种？
+15、四面体的顶点和各棱中点共10个点，从中取4个==不共面==的点，不同的取法有多少种？
 
-解析：
+解析：$C^4_{10}-4*C^4_6-4-3$
 
-答案：****
+4个是棱上三点对对面的中点
+
+3个是中线对底面的两个中点
+
+答案：**141**
 
 ---
 
 16、以一个正方体的顶点为顶点，能组成多少个不同的四面体？ 
 
-解析：
+解析：$C^4_8-C^2_4*2$
 
-答案：****
+取在4平行棱中取2个棱即有平面，有两组这样的棱
+
+答案：**58**
 
 ---
 
 17、6本不同的书全部分给5名同学每人至少一本，有多少种不同的分法？
 
-解析：
+解析：$F[I][J]=F[I-1][J-1]+F[I][J-1]*I$
 
-答案：****
+$ANS=F[6][5]*5!$
+
+答案：**1800**
 
 ---
 
 20、8本不同的书分给3名同学，其中1名同学2本、另两人3本，有多少种不同分法？
 
-解析：
+解析：$C^2_8*c^3_6*c^3_1$
 
-答案：****
+答案：**1680**
 
 ---
 
@@ -3913,47 +4149,15 @@ b.将v加入集合Vnew中，将<u, v>边加入集合Enew中；
 
 37、一些学生接受调查，这些学生中准备参加会计师考试的有63人，准备参加英语考试的有89人，准备参加计算机考试的有47人，三种都准备参加的有24人，只准备参加两种考试的有46人，不参加其中任何一种考试的有15人。请问有多少学生接受调查？
 
-解析：
+解析：$63+89+47-24*2-46+15$
 
-答案：****
+答案：**120**
 
----
-
-39、某班统计考试成绩，数学得90分上的有25人;语文得90分以上的有21人;两科中至少有一科在90分以上的有38人。问两科都在90分以上的有多少人?
-
-解析：
-
-答案：****
-
----
-
-45、对集合{1，2，…，n}及其每一个非空子集，定义一个唯一确定的“交替和”如下：按照递减的次序重新排列该子集，然后交替地减或加后继的数所得的结果，例如，集合{1,2,4,6,9}的“交替和”是9-6+4-2+1=6. {5,6}的“交替和”是6-5=1，{2}的交替和是2。那么，对于n=7。求所有子集的“交替和”的总和。
-
-解析：
-
-答案：****
-
----
-
-46、将与105互素的所有正整数，从小到大排成一个数列，试求出该数的第1000项．
-
-解析：
-
-答案：****
-
----
-
-47、对于任何的集合S，记|S|为集合的元素个数，记n（S）为集合S的子集个数，若A，B，C是三个集合，满足：n(A)+n(B)+n(C)=n(A∪B∪C)。|A|=|B|=100。求|A∩B∩C|的最小值。
-
-解析：
-
-答案：****
-
----
 
 57、一些苹果和梨混放在一个筐里，小明把这筐水果分成了若干堆，后来发现无论怎么分，总能从这若干堆里找到两堆，把这两堆水果合并在一起后，苹果和梨的个数是偶数，那么小明至少把这些水果分成了多少堆？ 
 
 解析：
+是5堆。因为梨和苹果的奇偶性可分为4个抽屉:(奇，奇），（偶，偶），（奇，偶），（偶，奇），所以根据抽屉原理，最少把这苹果和梨分成5堆。
 
 答案：****
 
@@ -4017,7 +4221,7 @@ D．过点（2，0，0）、（5，2，1）的直线
 
 ~~[NOIP2018提高组初赛C++模拟试题1](http://210.33.19.103/precontest/242?rand=W7wdnqwRAAMAABxySZkAAAAA20181009031646)~~
 
-[选择题-查找排序专项训练](http://210.33.19.103/precontest/255?rand=W7wJ7KwRAAMAABvFLZUAAAAH20181009015244)20-23,39-46
+~~[选择题-查找排序专项训练](http://210.33.19.103/precontest/255?rand=W7wJ7KwRAAMAABvFLZUAAAAH20181009015244)~~
 
 
 
