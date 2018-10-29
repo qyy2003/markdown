@@ -1,6 +1,5 @@
-# [2018 Multi-University Training Contest 1
-
-](http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+1&source=1&searchmode=source)
+# 2018 Multi-University Training Contest 1
+http://acm.hdu.edu.cn/search.php?field=problem&key=2018+Multi-University+Training+Contest+1&source=1&searchmode=source
 
 
 
@@ -64,12 +63,13 @@
 Total Submission(s): 3735    Accepted Submission(s): 1526**
 
 
+
 #### Problem Description
 
-Given an integer $n$, Chiaki would like to find three positive integers $x$, $y$ and $z$ such that: $n=x+y+z$, $x\mid n$, $y \mid n$, $z \mid n$ and $xyz$ is maximum.
-
+Given an integer $n​$, Chiaki would like to find three positive integers $x​$, $y​$ and $z​$ such that: $n=x+y+z​$, $x\mid n​$, $y \mid n​$, $z \mid n​$ and $xyz​$ is maximum.
 
 #### Input
+
 There are multiple test cases. The first line of input contains an integer $T$ ($1 \le T \le 10^6$), indicating the number of test cases. For each test case:
 The first line contains an integer $n$ ($1 \le n \le 10^{6}$).
 
@@ -112,9 +112,9 @@ For each test case, output an integer denoting the maximum $xyz$. If there no su
 
 **Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)Total Submission(s): 6531    Accepted Submission(s): 1718**
 
-Problem Description
 
 
+#### Problem Description
 
 Chiaki has $n$ strings $s_1,s_2,\dots,s_n$ consisting of '(' and ')'. A string of this type is said to be balanced:
 
@@ -124,18 +124,18 @@ Chiaki has $n$ strings $s_1,s_2,\dots,s_n$ consisting of '(' and ')'. A string o
 
 Chiaki can reorder the strings and then concatenate them get a new string $t$. Let $f(t)$ be the length of the longest balanced subsequence (not necessary continuous) of $t$. Chiaki would like to know the maximum value of $f(t)$ for all possible $t$.
 
+#### Input
 
-Input
 There are multiple test cases. The first line of input contains an integer $T$, indicating the number of test cases. For each test case:
 The first line contains an integer $n$ ($1 \le n \le 10^5$) -- the number of strings.
 Each of the next $n$ lines contains a string $s_i$ ($1 \le |s_i| \le 10^5$) consisting of `(' and `)'.
 It is guaranteed that the sum of all $|s_i|$ does not exceeds $5 \times 10^6$.
 
+#### Output
 
-Output
 For each test case, output an integer denoting the answer.
 
-Sample Input
+#### Sample Input
 
 ```
 2
@@ -148,7 +148,7 @@ Sample Input
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 4
@@ -173,14 +173,14 @@ Sample Output
 
 
 
-Problem Description
+#### Problem Description
 
 Chiaki has $3n$ points $p_1,p_2,\dots,p_{3n}$. It is guaranteed that no three points are collinear.
 Chiaki would like to construct $n$ disjoint triangles where each vertex comes from the $3n$ points.
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$, indicating the number of test cases. For each test case:
 The first line contains an integer $n$ ($1 \le n \le 1000$) -- the number of triangle to construct.
@@ -189,13 +189,13 @@ It is guaranteed that the sum of all $n$ does not exceed $10000$.
 
  
 
-Output
+#### Output
 
 For  each test case, output $n$ lines contain three integers $a_i,b_i,c_i$  ($1 \le a_i,b_i,c_i \le 3n$) each denoting the indices of points the  $i$-th triangle use. If there are multiple solutions, you can output any  of them.
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 1
@@ -207,9 +207,7 @@ Sample Input
 
  
 
-Sample OutputDistinct Values
-
-**Time Limit: 4000/2000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)Total Submission(s): 5115    Accepted Submission(s): 1759**
+#### Sample Output
 
 ```
 1 2 3
@@ -231,14 +229,14 @@ Sample OutputDistinct Values
 
 
 
-Problem Description
+#### Problem Description
 
 Chiaki  has an array of $n$ positive integers. You are told some facts about  the array: for every two elements $a_i$ and $a_j$ in the subarray  $a_{l..r}$ ($l \le i < j \le r$), $a_i \ne a_j$ holds.
 Chiaki would like to find a lexicographically minimal array which meets the facts.
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$, indicating the number of test cases. For each test case:
 
@@ -248,13 +246,13 @@ It is guaranteed that neither the sum of all $n$ nor the sum of all $m$ exceeds 
 
  
 
-Output
+#### Output
 
 For  each test case, output $n$ integers denoting the lexicographically  minimal array. Integers should be separated by a single space, and no  extra spaces are allowed  at the end of lines.
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 3
@@ -270,7 +268,7 @@ Sample Input
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 1 2
@@ -300,6 +298,8 @@ Sample Output
 
 
 
+#### Problem Description
+
 Chiaki  is good at generating special graphs. Initially, she has a graph with  only two vertices connected by an edge. Each time, she can choose an  edge $(u,v)$, make a copy of it, insert some new vertices (maybe zero)  in the edge (i.e. let the new vertices be $t_1,t_2,\dots,t_k$, Chiaki  would insert edges $(u,t_1)$, $(t_1,t_2)$,  $(t_{k-1}, t_k)$, $(t_k, v)$  into the graph).
 Given a weighted graph generated by above  operations, Chiaki would like to know the maximum weighted matching of  the graph and the number different maximum weighted matchings modulo  ($10^9 + 7)$).
 A matching in a graph is a set of pairwise  non-adjacent edges, none of which are loops; that is, no two edges share  a common vertex.
@@ -307,7 +307,7 @@ A maximum weighted matching is defined as a  matching where the sum of the value
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$, indicating the number of test cases. For each test case:
 The first line contains two integers $n$ and $m$ ($1 \le n, m \le 10^5$) -- the number of vertices and the number of edges.
@@ -316,13 +316,13 @@ It is guaranteed that neither the sum of all $n$ nor the sum of all $m$ exceeds 
 
  
 
-Output
+#### Output
 
 For  each test case, output two integers separated by a single space. The  first one is the sum of weight and the second one is the number of  different maximum weighted matchings modulo ($10^9 + 7$).
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 2
@@ -344,7 +344,7 @@ Sample Input
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 3 3
@@ -363,7 +363,7 @@ Sample Output
 
 
 
-Problem Description
+#### Problem Description
 
 Chiaki  has $n$ integers $s_0,s_1,\dots,s_{n-1}$. She has defined an infinite  sequence $S$ in the following way: $S_k = s_{k \bmod n} + n \cdot  \lfloor \frac{k}{n} \rfloor$, where $k$ is a zero based index.
 
@@ -373,7 +373,7 @@ For two integers $a$ and $b$ ($a \le b$), Chiaki would  like to find the value o
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$, indicating the number of test cases. For each test case:
 The first line contains three integers $n$, $a$ and $b$ ($1 \le n \le 2000, 0 \le a \le b \le 10^{18}$).
@@ -382,13 +382,13 @@ It is guaranteed that the sum of all $n$ does not exceed $20000$.
 
  
 
-Output
+#### Output
 
 For each test case, output an integer denoting the answer.
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 4
@@ -402,7 +402,7 @@ Sample Input
 2 5 2
 ```
 
-Sample Output
+#### Sample Output
 
 ```
 179
@@ -427,24 +427,28 @@ Sample Output
 
 
 
+#### Problem Description
+
 Chiaki is interested in an infinite sequence $a_1, a_2, a_3, ...$, which is defined as follows: 
 $$a_n=\begin{cases}1 & n = 1,2 \\ a_{n - a_{n-1}} + a_{n-1 - a_{n-2}} & n \ge 3\end{cases}$$
 Chiaki  would like to know the sum of the first $n$ terms of the sequence, i.e.  $\sum\limits_{i=1}^{n}a_i$. As this number may be very large, Chiaki is  only interested in its remainder modulo ($10^9 + 7$).
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$ ($1 \le T \le 10^5$), indicating the number of test cases. For each  test case:
 The first line contains an integer $n$ ($1 \le n \le 10^{18}$).
 
  
 
-Output
+#### Output
 
 For each test case, output an integer denoting the answer.
 
- Sample Input
+
+
+ #### Sample Input
 
 ```
 10
@@ -462,7 +466,7 @@ For each test case, output an integer denoting the answer.
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 1
@@ -493,7 +497,7 @@ Sample Output
 
 
 
-Problem Description
+#### Problem Description
 
 Chiaki  has a sequence $A=\{a_1,a_2,\dots,a_n\}$. Let $\mathbf{RMQ}(A, l, r)$  be the minimum $i$ ($l \le i \le r$) such that $a_i$ is the maximum  value in $a_l, a_{l+1}, \dots, a_{r}$.
 
@@ -503,7 +507,7 @@ For a given the sequence  $A=\{a_1,a_2,\dots,a_n\}$, define the weight of a sequ
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$, indicating the number of test cases. For each test case:
 The first line contains an integer $n$ ($1 \le n \le 10^6$) -- the length of the sequence.
@@ -512,14 +516,14 @@ It is guaranteed that the sum of all n does not exceed $3 \times 10^6$.
 
  
 
-Output
+#### #### Output
 
 For each test case, output the answer as a value of a rational number modulo $10^9 + 7$.
 Formally,  it is guaranteed that under given constraints the probability is always  a rational number $\frac{p}{q}$ ($p$ and $q$ are integer and coprime,  $q$ is positive), such that $q$ is not divisible by $10^9 + 7$. Output  such integer a between $0$ and $10^9 + 6$ that $p - aq$ is divisible by  $10^9 + 7$.
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 3
@@ -533,7 +537,7 @@ Sample Input
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 250000002
@@ -557,7 +561,7 @@ Sample Output
 
 
 
-Problem Description
+#### Problem Description
 
 A string $w$ is said to be a Lyndon word if $w$ is lexicographically smaller than any of its cyclic rotations. 
 The longest Lyndon substring of a string $s$ is the longest substring of $s$ which is a Lyndon word.
@@ -565,7 +569,7 @@ Chiaki  has $n$ strings $s_1,s_2,\dots,s_n$. She has some queries: for some  pai
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$, indicating the number of test cases. For each test case:
 The first line contains two integers $n$ and $m$ $(1 \le n, m \le 10^5)$ -- the number of strings and the number of queries.
@@ -576,13 +580,13 @@ It is guaranteed that neither the sum of all $n$ nor the sum of all $m$ exceeds 
 
  
 
-Output
+#### Output
 
 For each query, output an integer denoting the answer.
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 1
@@ -594,7 +598,7 @@ bb
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 4
@@ -616,7 +620,7 @@ Sample Output
 
 
 
-Problem Description
+#### Problem Description
 
 There  are $n$ lights aligned in a row. These lights are numbered $1$ to $n$  from left to right. Initially some of the lights are turned on. Chiaki  would like to turn off all the lights.
 Chiaki starts from the $p$-th  light. Each time she can go left or right (i.e. if Chiaki is at $x$,  then she can go to $x-1$ or $x+1$) and then press the switch of the  light in that position (i.e. if the light is turned on before, it will  be turned off and vise versa).
@@ -624,7 +628,7 @@ For each $p=1,2,\dots,n$, Chiaki would like to know the minimum steps needed to 
 
  
 
-Input
+#### Input
 
 There are multiple test cases. The first line of input is an integer $T$ indicates the number of test cases. For each test case:
 The first line contains an integer $n$ ($2 \le n \le 10^6$) -- the number of lights.
@@ -633,13 +637,13 @@ It is guaranteed that the sum of all $n$ does not exceed $10^7$.
 
  
 
-Output
+#### Output
 
 For  each test cases, output $(\sum\limits_{i=1}^{|s|} i \times z_i) \bmod  (10^9+7)$, where $z_i$ is the number of step needed when Chikai starts  at the $i$-th light.
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 3
@@ -653,7 +657,7 @@ Sample Input
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 0
@@ -675,27 +679,29 @@ Sample Output
 
 **Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 32768/32768 K (Java/Others)Total Submission(s): 4619    Accepted Submission(s): 1349**
 
-Problem Description
+
+
+#### Problem Description
 
 Chiaki often participates in international competitive programming contests. The time zone becomes a big problem.
 Given a time in Beijing time (UTC +8), Chiaki would like to know the time in another time zone $s$.
 
  
 
-Input
+#### Input
 
 There  are multiple test cases. The first line of input contains an integer  $T$ ($1 \le T \le 10^6$), indicating the number of test cases. For each  test case:
 The first line contains two integers $a$, $b$ ($0 \le a  \le 23, 0 \le b \le 59$) and a string $s$ in the format of "UTC+X'',  "UTC-X'', "UTC+X.Y'', or "UTC-X.Y'' ($0 \le X, X.Y \le 14, 0 \le Y \le  9$).
 
  
 
-Output
+#### Output
 
 For each test, output the time in the format of $hh:mm$ (24-hour clock).
 
  
 
-Sample Input
+#### Sample Input
 
 ```
 3
@@ -706,7 +712,7 @@ Sample Input
 
  
 
-Sample Output
+#### Sample Output
 
 ```
 11:11
