@@ -98,11 +98,94 @@ For each test case, output an integer denoting the maximum $xyz$. If there no su
 
 
 
+---
 
 
 
+### TRY1
 
+考虑存一下$(X+Y,X*Y)$的合法情况，然后逐个遍历
 
+```c++
+#include<cstdio>
+#include<algorithm>
+#include<map>
+using namespace std;
+int n,m;
+int ans=0;
+map<pair<int,int>,bool> ma;
+int main(){
+    m=1e6;
+    for(int i=2;i<=1000;i++)
+	for(int j=1;j<=m/i;j++)
+	   ma[make_pair(i+j,i*j)]=1;
+}
+```
+
+HOWEVER
+
+```
+real	0m11.516s
+user	0m11.200s
+sys	0m0.224s
+```
+
+好快!...
+
+```c++
+#include<cstdio>
+#include<algorithm>
+#include<map>
+using namespace std;
+int n,m;
+int ans=0;
+map<long long,bool> ma;
+int main(){
+    m=1e6;
+    for(int i=2;i<=1000;i++)
+	for(int j=1;j<=m/i;j++)
+	   ma[1ll*(i+j)*m+1ll*i*j]=1;
+}
+```
+
+优化一波
+
+```
+real	0m9.057s
+user	0m8.778s
+sys	0m0.260s
+```
+
+还是挂挂
+
+```c++
+#include<cstdio>
+#include<algorithm>
+#include<map>
+using namespace std;
+int n,M;
+vector<int> q[1000005];
+int main(){
+    M=1e6;
+    for(int i=2;i<=1000;i++)
+	for(int j=1;j<=M/i;j++)
+	  q[i*j].push_back(i+j);
+}
+```
+
+向vector求助
+
+```
+real	0m9.083s
+user	0m8.729s
+sys	0m0.304s
+```
+
+这......
+
+忽然发现要push_back6485017次。。。
+
+弃疗
 
 
 
