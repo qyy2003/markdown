@@ -66,15 +66,15 @@ Total Submission(s): 3735    Accepted Submission(s): 1526**
 
 #### Problem Description
 
-Given an integer $n​$, Chiaki would like to find three positive integers $x​$, $y​$ and $z​$ such that: $n=x+y+z​$, $x\mid n​$, $y \mid n​$, $z \mid n​$ and $xyz​$ is maximum.
+Given an integer $n$, Chiaki would like to find three positive integers $x$, $y$ and $z$ such that: $n=x+y+z$, $x\mid n$, $y \mid n$, $z \mid n$ and $xyz$ is maximum.
 
 #### Input
 
 There are multiple test cases. The first line of input contains an integer $T$ ($1 \le T \le 10^6$), indicating the number of test cases. For each test case:
 The first line contains an integer $n$ ($1 \le n \le 10^{6}$).
 
-
 #### Output
+
 For each test case, output an integer denoting the maximum $xyz$. If there no such integers, output $-1$ instead.
 
 
@@ -187,6 +187,176 @@ sys	0m0.304s
 
 弃疗
 
+---
+
+### TRY2
+
+和cmy胡一个结论，只有是3/4的倍数不是-1，3会更优
+
+那么打一个表
+
+```c++
+#include<cstdio>
+#include<cmath>
+#include<iostream>
+using namespace std;
+long long ans;
+int main(){
+    freopen("data.out","w",stdout);
+    for(int n=1;n<=1000000;n++){
+	printf("%d: ",n);
+	ans=-1;
+	for(int i=1;i<=n;i++)
+	    if(n%i==0)
+		for(int j=i;j<=n;j++)
+		    if(n%j==0)
+			if(n>i+j&&n%(n-i-j)==0)
+			    ans=max(ans,1ll*i*j*(n-i-j));
+	printf("%lld\n",ans);
+	fflush(stdout);
+    }
+}
+```
+
+
+
+```
+1: -1
+2: -1
+3: 1
+4: 2
+5: -1
+6: 8
+7: -1
+8: 16
+9: 27
+10: -1
+11: -1
+12: 64
+13: -1
+14: -1
+15: 125
+16: 128
+17: -1
+18: 216
+19: -1
+20: 250
+21: 343
+22: -1
+23: -1
+24: 512
+25: -1
+26: -1
+27: 729
+28: 686
+29: -1
+30: 1000
+31: -1
+32: 1024
+33: 1331
+34: -1
+35: -1
+36: 1728
+37: -1
+38: -1
+39: 2197
+40: 2000
+41: -1
+42: 2744
+43: -1
+44: 2662
+45: 3375
+46: -1
+47: -1
+48: 4096
+49: -1
+50: -1
+51: 4913
+52: 4394
+53: -1
+54: 5832
+55: -1
+56: 5488
+57: 6859
+58: -1
+59: -1
+60: 8000
+61: -1
+62: -1
+63: 9261
+64: 8192
+65: -1
+66: 10648
+67: -1
+68: 9826
+69: 12167
+70: -1
+71: -1
+72: 13824
+73: -1
+74: -1
+75: 15625
+76: 13718
+77: -1
+78: 17576
+79: -1
+80: 16000
+81: 19683
+82: -1
+83: -1
+84: 21952
+85: -1
+86: -1
+87: 24389
+88: 21296
+89: -1
+90: 27000
+91: -1
+92: 24334
+93: 29791
+94: -1
+95: -1
+96: 32768
+97: -1
+98: -1
+99: 35937
+100: 31250
+```
+
+```
+26936016	2018-10-30 14:52:31	Accepted	6298	655MS	1388K	372 B	G++	qinyuyang
+```
+
+```c++
+#include<cstdio>
+#include<cmath>
+#include<iostream>
+using namespace std;
+long long ans;
+int n,x;
+int main(){
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+	scanf("%d",&x);
+	if(x%3==0) {
+	    printf("%lld\n",1ll*(x/3)*(x/3)*(x/3));
+	    continue;
+	}
+	if(x%4==0){
+	    printf("%lld\n",1ll*(x/2)*(x/4)*(x/4));
+	    continue;
+	}
+	printf("-1\n");
+    }
+}
+```
+
+
+
+
+
+
+
 
 
 
@@ -211,8 +381,8 @@ Chiaki can reorder the strings and then concatenate them get a new string $t$. L
 
 There are multiple test cases. The first line of input contains an integer $T$, indicating the number of test cases. For each test case:
 The first line contains an integer $n$ ($1 \le n \le 10^5$) -- the number of strings.
-Each of the next $n$ lines contains a string $s_i$ ($1 \le |s_i| \le 10^5$) consisting of `(' and `)'.
-It is guaranteed that the sum of all $|s_i|$ does not exceeds $5 \times 10^6$.
+Each of the next $n$ lines contains a string $s_i$ ($1 \le |s_i| \le 10^5$) consisting of ‘(' and ’)'.
+It is guaranteed that the sum of all $|s_i|$ does not exceeds $5 \times 10^6​$.
 
 #### Output
 
